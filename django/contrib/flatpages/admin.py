@@ -19,7 +19,7 @@ class FlatPageAdmin(admin.ModelAdmin):
     form = FlatpageForm
     fieldsets = (
         (None, {'fields': ('url', 'title', 'content', 'sites')}),
-        (_('Advanced options'), {'classes': ('collapse',), 'fields': ('enable_comments', 'registration_required', 'template_name')}),
+        (_('Advanced options'), {'classes': ('collapse',), 'fields': ('enable_comments', 'registration_required', 'template_name', 'omniture')}),
     )
     list_display = ('url', 'title')
     list_filter = ('sites', 'enable_comments', 'registration_required')

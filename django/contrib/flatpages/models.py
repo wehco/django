@@ -12,6 +12,8 @@ class FlatPage(models.Model):
         help_text=_("Example: 'flatpages/contact_page.html'. If this isn't provided, the system will use 'flatpages/default.html'."))
     registration_required = models.BooleanField(_('registration required'), help_text=_("If this is checked, only logged-in users will be able to view the page."))
     sites = models.ManyToManyField(Site)
+    omniture = models.CharField(_('omniture'), blank=True, max_length=100, default=_("/flatpages/information"),
+        help_text=_("Example: '/news/elections/map'. Make sure to have leading but no trailing slashes and to use the proper hierarchy"))
 
     class Meta:
         db_table = 'django_flatpage'
