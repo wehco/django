@@ -170,8 +170,8 @@ class CommentDetailsForm(CommentSecurityForm):
             if bad_words:
                 plural = len(bad_words) > 1
                 raise forms.ValidationError(ungettext(
-                    "Watch your mouth! The word %s is not allowed here.",
-                    "Watch your mouth! The words %s are not allowed here.", plural) % \
+                    "Sorry, we can't post your comment because it contains banned words.  In consideration of other commenters, posting foul language or hyperlinks is not permitted.  The word %s is not allowed here.",
+                    "Sorry, we can't post your comment because it contains banned words.  In consideration of other commenters, posting foul language or hyperlinks is not permitted.  The words %s are not allowed here.", plural) % \
                     get_text_list(['"%s%s%s"' % (i[0], '-'*(len(i)-2), i[-1]) for i in bad_words], 'and'))
         return comment
 
